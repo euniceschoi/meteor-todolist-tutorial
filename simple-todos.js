@@ -25,7 +25,9 @@ if (Meteor.isClient) {
 
       Tasks.insert({
         text: text,
-        createdAt: new Date()
+        createdAt: new Date(),
+        owner: Meteor.userID(),
+        username: Meteor.user().username
       });
 
       event.target.text.value = "";
